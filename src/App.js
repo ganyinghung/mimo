@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Box, Button, Grid, Heading } from 'grommet';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Grid 
+        rows={[ 'full' ]}
+        columns={[ '3/4', 'auto' ]}
+        areas={[
+          { name: 'hero', start: [0,0], end: [0,0] },
+          { name: 'login', start: [1,0], end: [1,0] }
+        ]}
+        margin="xlarge"
+      >
+        <Box gridArea="hero" pad="large">
+          <Heading level="1">MIMO</Heading>
+          <Heading level="2">The experimental web3 Reddit/Twitter clone</Heading>
+
+
+        </Box>
+        <Box gridArea="login" align="center" pad="large" border={{ style: 'dotted' }}>
+          <Button primary size="medium" label="Connet your wallet" />
+        </Box>
+      </Grid>
     </div>
   );
 }
