@@ -3,12 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { ThirdwebProvider } from "@3rdweb/react";
 import { Grommet } from 'grommet';
 
 ReactDOM.render(
-  <Grommet plain>
-    <App />
-  </Grommet>,
+  <ThirdwebProvider 
+    connectors={{injected:{}}} 
+    supportedChainIds={[4]}
+  >
+    <Grommet plain>
+      <App />
+    </Grommet>
+  </ThirdwebProvider>,
   document.getElementById('root')
 );
 
