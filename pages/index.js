@@ -4,6 +4,7 @@ import { useWeb3 } from "@3rdweb/hooks";
 import { ThirdwebSDK } from "@3rdweb/sdk";
 import { ConnectWallet } from "@3rdweb/react"; 
 import { Box, Button, Grid, Heading } from 'grommet';
+import Link from 'next/link'
 
 
 const sdk = new ThirdwebSDK("rinkeby");
@@ -12,7 +13,7 @@ const membershipBundleDropModule = sdk.getBundleDropModule(
 );
 
 
-function App() {
+function Homepage() {
 
   const { connectWallet, address, error, provider } = useWeb3();
   const signer = provider ? provider.getSigner() : undefined;
@@ -71,10 +72,12 @@ function App() {
 
   function Membership() {
     return isMember ?
-      <Button 
-        primary 
-        label="Start now" 
-      />
+      <Link href="/posts">
+        <Button 
+          primary 
+          label="Welcome back!" 
+        />
+      </Link>
       :
       <Button 
         secondary 
@@ -108,4 +111,4 @@ function App() {
   );
 }
 
-export default App;
+export default Homepage;
