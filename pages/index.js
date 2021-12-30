@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const sdk = new ThirdwebSDK("rinkeby");
 const membershipBundleDropModule = sdk.getBundleDropModule(
-  "0x61C0691FaF4d41775aa5288e593bF4e37Fcd759c",
+  process.env.MEMBERSHIP_BUNDLE_DROP,
 );
 
 

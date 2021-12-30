@@ -13,6 +13,7 @@
 
 # nextjs
 .next
+next.config.js
 
 # misc
 .DS_Store
